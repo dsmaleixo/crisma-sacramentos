@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guia completo sobre os quatro sacramentos: Confissão, Unção dos Enfermos, Ordem e Matrimônio">
+<title>Os Quatro Sacramentos · Guia de Palestra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf7ee;
+    --bg-soft: #f3ecdd;
+    --bg-card: #ffffff;
+    --ink: #2a2014;
+    --ink-soft: #5a4a37;
+    --ink-mute: #8a7861;
+    --accent: #7a1f26;
+    --accent-soft: #a63d45;
+    --gold: #b8925a;
+    --gold-soft: #d4b57f;
+    --line: #e5d9c2;
+    --line-soft: #efe6d3;
+    --shadow: 0 4px 24px rgba(122, 31, 38, 0.08);
+    --shadow-hover: 0 8px 32px rgba(122, 31, 38, 0.14);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ===== ORNAMENTAL BACKGROUND ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(184, 146, 90, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(122, 31, 38, 0.04) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== HEADER ===== */
+  .hero {
+    padding: 4rem 1.25rem 3rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+  }
+
+  .hero-ornament::before,
+  .hero-ornament::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .hero-ornament::after { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  .hero-ornament svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .hero .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 3vw, 1.3rem);
+    color: var(--ink-soft);
+    font-style: italic;
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+    font-weight: 400;
+  }
+
+  .hero .meta {
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ===== NAV TABS ===== */
+  .nav-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251, 247, 238, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 0;
+  }
+
+  .nav-tabs {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 1.25rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    flex-shrink: 0;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    background: var(--bg-card);
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .nav-tab:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .nav-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .nav-tab svg { width: 14px; height: 14px; }
+
+  /* ===== INTRO ===== */
+  .intro {
+    padding: 2rem 0 1rem;
+  }
+
+  .intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .intro-hint {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+  }
+
+  .intro-hint strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ===== SECTION ===== */
+  .sacrament {
+    padding: 3rem 0 1rem;
+    scroll-margin-top: 72px;
+  }
+
+  .sacrament-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding: 2rem 1rem;
+    position: relative;
+  }
+
+  .sacrament-icon {
+    width: 56px;
+    height: 56px;
+    color: var(--accent);
+    margin: 0 auto 1rem;
+  }
+
+  .sacrament-number {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .sacrament-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+
+  .sacrament-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.15rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .sacrament-divider {
+    display: flex;
+    justify-content: center;
+    margin: 1.2rem 0 0;
+    opacity: 0.5;
+  }
+
+  .sacrament-divider::before,
+  .sacrament-divider::after {
+    content: '';
+    height: 1px;
+    width: 40px;
+    background: var(--gold);
+    align-self: center;
+  }
+
+  .sacrament-divider span {
+    color: var(--gold);
+    margin: 0 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  /* ===== SUBSECTION ===== */
+  .subsection {
+    margin-bottom: 2rem;
+  }
+
+  .subsection-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-left: 0.3rem;
+  }
+
+  .subsection-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(122, 31, 38, 0.08);
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .subsection-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  /* ===== BULLET CARD ===== */
+  .bullet {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 0.7rem;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow);
+  }
+
+  .bullet:hover {
+    border-color: var(--gold-soft);
+  }
+
+  .bullet.open {
+    border-color: var(--accent-soft);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .bullet-header {
+    padding: 1.1rem 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    user-select: none;
+    transition: background 0.2s ease;
+  }
+
+  .bullet-header:hover {
+    background: var(--line-soft);
+  }
+
+  .bullet-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+  }
+
+  .bullet.open .bullet-number {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .bullet-title {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .bullet-chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--ink-mute);
+    transition: transform 0.3s ease;
+    margin-top: 3px;
+  }
+
+  .bullet.open .bullet-chevron {
+    transform: rotate(180deg);
+    color: var(--accent);
+  }
+
+  .bullet-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .bullet.open .bullet-body {
+    max-height: 2000px;
+  }
+
+  .bullet-content {
+    padding: 0 1.25rem 1.4rem;
+    border-top: 1px dashed var(--line);
+    padding-top: 1.2rem;
+    margin-top: 0.3rem;
+  }
+
+  .detail {
+    margin-bottom: 1rem;
+  }
+
+  .detail:last-child { margin-bottom: 0; }
+
+  .detail-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .detail-text {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .detail.quote .detail-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink);
+    padding-left: 1rem;
+    border-left: 2px solid var(--gold);
+  }
+
+  /* ===== CLOSING ===== */
+  .closing {
+    padding: 4rem 1.25rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .closing-ornament {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.5em;
+  }
+
+  .closing-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--ink);
+    line-height: 1.5;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .closing-sign {
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ===== UTILITY ACTIONS ===== */
+  .floating-actions {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 40;
+  }
+
+  .fab {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(122, 31, 38, 0.3);
+    transition: all 0.25s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+
+  .fab.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .fab:hover {
+    background: var(--accent-soft);
+    transform: translateY(-2px);
+  }
+
+  .fab svg { width: 20px; height: 20px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .hero { padding: 3rem 1.25rem 2rem; }
+    .sacrament { padding: 2rem 0 0.5rem; }
+    .sacrament-header { padding: 1.2rem 1rem; margin-bottom: 1.8rem; }
+    .bullet-header { padding: 1rem; gap: 0.7rem; }
+    .bullet-content { padding: 0 1rem 1.2rem; padding-top: 1rem; }
+    .subsection-title { font-size: 1.4rem; }
+    .intro p { font-size: 1.05rem; }
+    .floating-actions { bottom: 1rem; right: 1rem; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .sacrament-header, .subsection { animation: fadeInUp 0.6s ease backwards; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    .nav-sticky, .floating-actions { display: none; }
+    .bullet-body { max-height: none !important; }
+    .bullet-chevron { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="hero-ornament">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 2v20M12 2l-3 3M12 2l3 3M4 12h16"/>
+    </svg>
+  </div>
+  <h1>Os Quatro <em>Sacramentos</em></h1>
+  <p class="subtitle">Um guia prático para entender e viver<br>Confissão, Unção, Ordem e Matrimônio</p>
+  <div class="meta">Palestra · 20 minutos · Jovens 16–25</div>
+</header>
+
+<!-- ===================== STICKY NAV ===================== -->
+<nav class="nav-sticky">
+  <div class="nav-tabs" id="navTabs">
+    <a href="#confissao" class="nav-tab" data-target="confissao">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Confissão
+    </a>
+    <a href="#uncao" class="nav-tab" data-target="uncao">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+      Unção
+    </a>
+    <a href="#ordem" class="nav-tab" data-target="ordem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1z"/></svg>
+      Ordem
+    </a>
+    <a href="#matrimonio" class="nav-tab" data-target="matrimonio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>
+      Matrimônio
+    </a>
+  </div>
+</nav>
+
+<!-- ===================== INTRO ===================== -->
+<section class="container intro">
+  <p>Quatro sacramentos. Quatro realidades que tocam a nossa vida de formas profundas. Este guia traz o essencial de cada um — em linguagem direta, prática e feita para os jovens de hoje.</p>
+  <div class="intro-hint">
+    <strong>Como usar:</strong> toque em cada ponto para ver a explicação completa
+  </div>
+</section>
+
+<!-- ===================== CONFISSÃO ===================== -->
+<section class="sacrament" id="confissao">
+  <div class="container">
+
+    <div class="sacrament-header">
+      <svg class="sacrament-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        <path d="M12 7v6M9 10h6"/>
+      </svg>
+      <div class="sacrament-number">Sacramento I</div>
+      <h2 class="sacrament-title">Confissão</h2>
+      <p class="sacrament-tagline">O encontro com a misericórdia que restaura a alma</p>
+      <div class="sacrament-divider"><span>✦</span></div>
+    </div>
+
+    <!-- ESSÊNCIA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Essência</span>
+        <h3 class="subsection-title">O que é, no coração</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Encontro real com Cristo: o padre absolve em Seu nome</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Na confissão, não é o padre humano que perdoa — é o próprio Cristo agindo <em>através</em> dele.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">O padre age <em>in persona Christi</em>. Quando ele diz "eu te absolvo", é a voz de Jesus ressoando. A Confissão não é uma conversa com um homem bondoso; é um encontro sacramental com o Ressuscitado.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Imagina que, depois de morto pelo pecado, você encontra Jesus cara a cara, como os Apóstolos no Cenáculo. A Confissão é literalmente isso — só que mediado por um instrumento: o padre."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Jesus instituiu: "Àqueles a quem perdoardes, serão perdoados" (Jo 20,23)</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Não é invenção da Igreja — é mandato explícito de Cristo ressuscitado.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">No dia da Ressurreição, Jesus sopra sobre os Apóstolos e lhes dá o Espírito Santo para perdoar pecados. Mesma cena, Mt 16,19: "o que ligares na terra será ligado no Céu". É o poder das chaves.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">Cite o versículo de cor. Reforce: "Isso não é tradição inventada no século X. Está no Evangelho, na tarde do primeiro domingo de Páscoa."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- POR QUE IMPORTA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Por que importa</span>
+        <h3 class="subsection-title">Por que um jovem deve se importar</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Depois do Batismo, é o caminho normal de volta a Deus</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">O Batismo é a "primeira tábua de salvação"; a Confissão é a "segunda tábua" — para quando caímos ao mar.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Os Padres da Igreja chamavam a Confissão de "segunda penitência". Quando perdemos a graça pelo pecado mortal, não podemos re-batizar. Cristo previu isso e nos deixou a Confissão.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Você foi batizado. Mas se caiu no mar, precisa de uma segunda tábua. E Jesus não te deixa na água — Ele te jogou esta tábua."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Pecado mortal sem confissão significa perder o Céu</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Isso não é medo religioso exagerado — é realismo espiritual.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">O pecado mortal destrói a caridade na alma (CIC 1855). Morrer em pecado mortal, sem contrição perfeita (que é rara), significa o Inferno. A Confissão é a porta normal e acessível do perdão.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Os protestantes não têm isso. Como vão para o Céu quando caem em pecado grave? Só por uma graça excepcional. Nós temos uma porta sempre aberta."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Dá perdão real, não apenas sensação psicológica de alívio</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">A Confissão opera <em>ex opere operato</em> — há uma modificação real na alma.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Trento condena quem reduz a absolvição a "mero ministério de pronunciar que estão perdoados". A alma é verdadeiramente restaurada à amizade com Deus.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não importa se você sai 'sentindo' ou não. A graça entrou. É como cirurgia sob anestesia — você pode não sentir nada, mas o tumor foi removido."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Como funciona</span>
+        <h3 class="subsection-title">A estrutura concreta</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Exame de consciência sério, focando nos pecados graves</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Nem superficial ("entrei e improvisei"), nem escrupuloso ("fiquei duas horas remoendo").</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Peça luzes ao Espírito Santo. Lembre-se primeiro dos pecados mortais desde a última confissão. Para quem confessa com frequência, isso é rápido.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">Use a imagem do cachorro correndo atrás do próprio rabo — é o escrupuloso. O oposto é o que "chega correndo no confessionário sem saber o que vai dizer". Evite os dois extremos.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Arrependimento: verdadeiro, sobrenatural, supremo, universal e confiante</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">As cinco qualidades do arrependimento válido.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text"><strong>Verdadeiro:</strong> sem teatro diante de Deus. <strong>Sobrenatural:</strong> por ter ofendido a Deus (não por medo de passar no vestibular). <strong>Supremo:</strong> "antes morrer do que pecar" (São Domingos Sávio). <strong>Universal:</strong> de todos os pecados graves, de uma vez só. <strong>Confiante:</strong> na misericórdia de Deus, não no desespero.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">Use a imagem do passarinho preso por mil fios — só voa quando corta o <em>último</em>. Se deixar um pecado mortal de fora, todos ficam.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Propósito firme: fugir das ocasiões próximas de pecado</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Arrependimento sem mudança de vida é mentira.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">"Quem quer o fim, quer os meios." Quem quer parar com pornografia precisa deletar os apps. Quem quer parar de fornicar precisa parar de visitar a ex. Não basta querer — tem que cortar a fonte.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Alguém arrependido de pecados sexuais, mas continua indo na casa da ex 'como amiga'. Isso não é propósito — é fingimento."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">4</span>
+          <span class="bullet-title">Acusação ao padre, penitência aceita e absolvição</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">A estrutura concreta da confissão: diga espécie, agravantes e número.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Diga o pecado em si, as circunstâncias que o tornam pior (ex: bater em alguém é pecado; bater na mãe é agravante), e quantas vezes (frequência, não número exato).</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não é hora de contar histórias, não é direção espiritual. Diga o pecado, pronto. O padre não precisa da novela — precisa da matéria do sacramento."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ERRO COMUM -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Erro comum</span>
+        <h3 class="subsection-title">Confusões a corrigir</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Não é psicoterapia nem desabafo; é ato judicial sacramental</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">A Confissão não é sessão com terapeuta espiritual.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Trento define: a absolvição é ato <em>judicial</em> do padre. Ele julga e absolve. Não é só "desabafo com escuta empática".</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se você quer desabafar, ligue para um amigo. Se quer ser perdoado e restaurado, entre no confessionário."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Arrependimento é ato da vontade, não sentimento emocional</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Não precisa chorar para estar arrependido.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Muitos ficam inseguros porque "não sentem". Mas arrependimento é ato da vontade: "Eu rejeito isso, não quero mais." Se vier choro, ótimo; se não vier, não importa.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Você pode estar arrependido de verdade mesmo se sentir frio por dentro. Deus lê a vontade, não as lágrimas."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- APLICAÇÃO -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Aplicação prática</span>
+        <h3 class="subsection-title">Como viver isso hoje</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Confesse-se com frequência, como se fosse a última vez</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Prática do leito de morte.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Imagine que em cinco minutos você estará diante de Deus. Com que seriedade se confessaria? Com que propósito? É esse espírito que devemos levar a toda confissão.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Confesse-se como se fosse moribundo. Isso fortalece o arrependimento e o propósito de forma impressionante."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Declare guerra a dois ou três pecados veniais específicos</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Não tente abraçar todos os veniais — foque em dois ou três.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">É como abraçar uma árvore: se ela for gigante, seus braços não alcançam. Escolha uma árvore menor, que você pode abraçar com toda a força. As virtudes crescem juntas — atacando um pecado, outros caem.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Escolha hoje: o pecado da fofoca? Da impaciência com a mãe? Da preguiça da oração? Declare guerra a <em>esse</em>. Não tente derrubar todos de uma vez."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== UNÇÃO ===================== -->
+<section class="sacrament" id="uncao">
+  <div class="container">
+
+    <div class="sacrament-header">
+      <svg class="sacrament-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/>
+      </svg>
+      <div class="sacrament-number">Sacramento II</div>
+      <h2 class="sacrament-title">Unção dos Enfermos</h2>
+      <p class="sacrament-tagline">O toque de Cristo que fortalece na hora decisiva</p>
+      <div class="sacrament-divider"><span>✦</span></div>
+    </div>
+
+    <!-- ESSÊNCIA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Essência</span>
+        <h3 class="subsection-title">O que é, no coração</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Toque de Cristo que fortalece a alma do enfermo grave</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">É a mão do Ressuscitado tocando quem sofre.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text"><em>Confortatio</em> — do latim <em>cum forte</em>, "com força". Não é "conforto de almofada". É robustecimento espiritual para momentos duros.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Quando o corpo está fraco, a alma também fica. O diabo aproveita. A Unção é Deus dando reforço blindado para a batalha final."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Sacramento para o momento mais decisivo: o perigo de morte</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Na hora da morte se decide a eternidade — é onde mais precisamos de graça.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Base bíblica: Tiago 5,14-15 — "Alguém está doente? Chame os presbíteros, que orem sobre ele, ungindo-o em nome do Senhor."</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"A hora da morte não é o fim do filme. É a cena definitiva. Cristo não nos deixa sozinhos nessa cena."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- POR QUE IMPORTA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Por que importa</span>
+        <h3 class="subsection-title">Por que um jovem deve se importar</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">O demônio ataca mais quando estamos fracos e doentes</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Jó é o modelo — Satanás feriu-o com chagas para tentá-lo a amaldiçoar Deus.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Doença não é só física. É ocasião de tentação: revolta, desespero, descrença, impaciência com Deus. Quanto mais fragilizados, mais fáceis de atacar.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Você já viu alguém piedoso ficando amargurado com uma doença longa? É o ataque. Deus deu a Unção exatamente para isso."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Apaga relíquias do pecado e prepara a alma</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">O pecado deixa marcas mesmo depois de perdoado — a Unção limpa esses resquícios.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text"><em>Reliquiae peccati</em>: a fraqueza, o medo da morte, a dificuldade de virtude que sobram depois do pecado já confessado. A Unção remove esses resquícios, preparando para entrar direto na glória.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"É como quando um corte sara, mas a cicatriz fica. A Unção trabalha nas cicatrizes espirituais antes do Céu."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Pode perdoar pecados e apagar penas temporais (como indulgência)</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Embora o foco primário seja fortalecer, ela também perdoa e encurta o Purgatório.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Se a pessoa não pode se confessar (inconsciente, impossibilitada), a Unção perdoa pecados como efeito secundário. Também apaga penas temporais, parcial ou totalmente.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"É um 'combo' de graça: fortalece, perdoa se preciso, e pode te poupar anos de Purgatório."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Como funciona</span>
+        <h3 class="subsection-title">A estrutura concreta</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Ministro: somente sacerdote validamente ordenado (padre ou bispo)</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Leigo rezando com óleo não faz sacramento — faz sacramental.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Cân. 1003: "Todo sacerdote, e somente ele, pode administrar validamente a Unção." Base: Tiago 5,14 — "chamai os <em>presbíteros</em>" (= sacerdotes, como Trento dogmatizou).</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não aceite unções feitas por leigos como se fossem sacramento. É bem-intencionado, mas não é o sacramento."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Matéria: unção com óleo vegetal abençoado na testa e mãos</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Óleo abençoado pelo bispo, passado na testa e palmas.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Fórmula: "Por esta santa unção e pela sua infinita misericórdia, o Senhor venha em teu auxílio com a graça do Espírito Santo, para que, liberto dos teus pecados, Ele te salve e, na sua bondade, alivie os teus sofrimentos."</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se a pessoa tem cabeça e mãos enfaixadas, o padre unge qualquer parte acessível. O sacramento é flexível na forma, firme na substância."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Já quando doença grave ou velhice começa o perigo</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Não precisa esperar o "último suspiro" — <em>incipit versari</em> (começa o perigo).</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Código atual: assim que a pessoa "começa a estar em perigo por doença ou velhice". Exemplo: diagnóstico de câncer maligno — já pode receber.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se o médico disser 'é grave' — é hora. Não espere a UTI com ventilador mecânico."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">4</span>
+          <span class="bullet-title">Pode ser repetido se a doença agravar ou retornar</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Não é sacramento de uma vez só.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Cân. 1004 §2: repete-se se a pessoa se recupera e cai doente de novo, ou se o perigo se agrava na mesma doença.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Avó saiu do hospital e meses depois piorou? Chame o padre de novo. A graça está à disposição."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ERRO COMUM -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Erro comum</span>
+        <h3 class="subsection-title">Confusões a corrigir</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Não é só para moribundos no último suspiro</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">O termo antigo "Extrema-Unção" criou medo — como se o padre trouxesse a morte.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">O Catecismo Romano já condenava como <em>falta muito grave</em> esperar a pessoa "já sem esperança de salvar-se" para ungir. O Vaticano II preferiu "Unção dos Enfermos" justamente para corrigir isso.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se sua avó tem medo do padre entrar no quarto, isso é superstição. A Unção é vida, não sentença de morte."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Não visa principalmente cura física, mas alívio espiritual</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Pode curar o corpo como efeito secundário, mas não é esse o fim.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Às vezes cura, às vezes não. Cura por modo de remédio, auxiliando as causas naturais — não por modo de milagre. Se o corpo está irreversivelmente destruído, Unção não é "fórmula mágica".</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não é reza-cura. É sacramento. A finalidade é tirar a pessoa dos perigos espirituais da doença."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- APLICAÇÃO -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Aplicação prática</span>
+        <h3 class="subsection-title">Como viver isso hoje</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Doença séria, cirurgia grave, idade avançada: chame o padre cedo</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Seja proativo com familiares idosos e doentes.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Não seja a família que só chama padre quando a pessoa está inconsciente. Chame enquanto o parente pode se confessar, participar, receber a Eucaristia conscientemente.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se seu avô tem 85 anos e cai doente, não adie. Esse é exatamente o momento que a Igreja quer o sacerdote lá."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Ordem ideal: Confissão, Unção dos Enfermos e Viático</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Os três dons do moribundo, na ordem certa.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Primeiro a Confissão (limpar a alma), depois a Unção (fortalecer), depois o Viático (Eucaristia como "alimento para o caminho"). Acrescente a indulgência plenária. São as quatro graças para uma morte santa.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se você estivesse morrendo agora, gostaria que seus filhos e netos soubessem disso. Gravem essa ordem: Confissão, Unção, Viático."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== ORDEM ===================== -->
+<section class="sacrament" id="ordem">
+  <div class="container">
+
+    <div class="sacrament-header">
+      <svg class="sacrament-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1z"/>
+      </svg>
+      <div class="sacrament-number">Sacramento III</div>
+      <h2 class="sacrament-title">Ordem</h2>
+      <p class="sacrament-tagline">A coluna que sustenta a vida sacramental da Igreja</p>
+      <div class="sacrament-divider"><span>✦</span></div>
+    </div>
+
+    <!-- ESSÊNCIA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Essência</span>
+        <h3 class="subsection-title">O que é, no coração</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Cristo torna o homem seu instrumento: padre agindo em Seu nome</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">O padre não age "em nome próprio" — ele empresta sua voz, suas mãos, sua pessoa a Cristo.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Duas funções próprias do sacerdote: oferecer o sacrifício (Missa) e perdoar os pecados (Confissão). Sem Ordem, não há nenhum dos dois.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Quando o padre levanta a hóstia e diz 'Isto é o meu corpo', ele não está citando Jesus. Ele está sendo a voz de Jesus naquele momento."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Instituída na Última Ceia: "Fazei isto em memória de mim"</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Na Quinta-feira Santa, Cristo criou simultaneamente a Eucaristia e o sacerdócio.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">"Fazei isto" = "tenham o poder de fazer isto". Ao dizer "fazei" aos Doze, Jesus os ordenou sacerdotes. Quinta-feira Santa = nascimento do sacerdócio católico.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Na mesma noite em que Jesus instituiu a Eucaristia, Ele fabricou os homens que poderiam continuar celebrando-a. Um não existe sem o outro."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- POR QUE IMPORTA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Por que importa</span>
+        <h3 class="subsection-title">Por que um jovem deve se importar</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Sem sacerdote, não há Missa, Confissão nem Unção</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">A Ordem é a coluna que sustenta o edifício sacramental.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Sem ordenação válida, caem por terra Eucaristia, Confissão, Unção, Crisma. Sobram só Batismo e Matrimônio. É o drama dos protestantes.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Imagine uma catedral sem a coluna central. É o cristianismo protestante: desabou o sistema sacramental inteiro."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Pelo padre, Cristo Ressuscitado ainda toca nossas almas</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Jesus subiu ao Céu em corpo, mas continua nos tocando através dos sacerdotes.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Sacramentos = instrumentos da humanidade de Cristo. O padre é o canal físico pelo qual Cristo Ressuscitado ainda chega às almas neste mundo.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Cristo não nos abandonou quando subiu. Ele deixou mãos humanas — as mãos do padre — para continuar nos tocando."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Coluna da Igreja: por isso o demônio ataca tanto os sacerdotes</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">A estratégia do diabo desde Lutero é destruir o sacerdócio.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Derrubar o sacerdócio = derrubar toda a vida sacramental. Por isso padres sofrem tanta tentação, escândalo, ataque midiático, solidão, ceticismo.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"No filme 'Nefarious', o demônio entra em pânico quando falam em chamar um padre. Ele sabe o que é um padre. Nós é que não sabemos."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Como funciona</span>
+        <h3 class="subsection-title">A estrutura concreta</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Três graus: diácono, presbítero, bispo (plenitude do sacerdócio)</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Hierarquia tripla com plenitude no bispo.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Diácono auxilia mas não consagra nem absolve. Presbítero (padre) consagra e absolve. Bispo tem tudo + pode ordenar outros. Só bispo ordena validamente.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"O bispo é o sacerdote pleno. O padre recebe do bispo. O diácono ajuda. É um sistema em cascata."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Matéria: imposição das mãos do bispo; forma: oração consecratória</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">O núcleo do rito é antigo e simples: mão do bispo + oração.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Vem do Novo Testamento (At 6,6; 2Tm 1,6 — "reavives o dom pela imposição das minhas mãos"). Em grego, o próprio nome do sacramento na tradição oriental é <em>cheirotonia</em> = imposição das mãos.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não é fórmula mágica. É gesto bíblico, herdado dos Apóstolos, usado há dois mil anos sem interrupção."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Só varão batizado pode ser ordenado (questão dogmática fechada)</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Questão fechada por João Paulo II em <em>Ordinatio Sacerdotalis</em> (1992).</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Jesus escolheu só homens. Podia ter escolhido Nossa Senhora, não escolheu. Ordenar mulher = ordenação nula, arriscando toda a sucessão apostólica. Tuciorismo: na dúvida, vai pelo certo.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não é machismo. É que Cristo deixou assim. Quem somos nós para mudar as regras do sacramento que Ele instituiu?"</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">4</span>
+          <span class="bullet-title">Imprime caráter indelével: marca eterna na alma</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Uma vez padre, sempre padre — mesmo no Inferno.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Caráter (<em>indelével</em> = "não deletável") é uma marca ontológica. Padre em pecado mortal perde graça, mas não caráter. Por isso padre casado, em perigo de morte, ainda pode absolver validamente qualquer pessoa.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Padre não é profissão que você deixa. É uma modificação permanente na alma. Padre <em>é</em>, não padre <em>trabalha como</em>."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ERRO COMUM -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Erro comum</span>
+        <h3 class="subsection-title">Confusões a corrigir</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Não é profissão, emprego nem status social</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Carreira eclesiástica é um monstro moderno.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">O padre Drewermann criticava seminários que pegam rapazes frágeis e os guindam a um status superior. Quem vai ao sacerdócio por conforto, casa, comida, respeito — está errado desde a largada.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se algum jovem quer ser padre porque 'tem casa e emprego garantido', fuja. Vai ser um padre infeliz e uma tragédia para os fiéis."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Padre não é "igual" ao leigo: tem poderes exclusivos de Cristo</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">O igualitarismo marxista invadiu a teologia (Leonardo Boff, Teologia da Libertação).</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Há quem diga "somos todos sacerdotes pelo Batismo". Verdade parcial — mas há <em>também</em> um sacerdócio ministerial, exclusivo. O padre faz o que leigo nenhum pode fazer: consagrar e absolver.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Beijar a mão do padre não é bajulação. É reconhecer que aquela mão toca realidades que minha mão não toca."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- APLICAÇÃO -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Aplicação prática</span>
+        <h3 class="subsection-title">Como viver isso hoje</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Reze muito pelos seus sacerdotes — eles são os mais atacados</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Sacerdote adoece — espiritual, afetiva, fisicamente. A Igreja precisa das orações dos leigos.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Estatisticamente, muitos padres começam a adoecer 5 anos depois da ordenação. Santa Teresa fundou os Carmelos exatamente para rezar por padres. Hoje há as "mães espirituais".</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Escolha um padre da sua paróquia e reze por ele diariamente. Um terço, uma missa oferecida por mês. Isso muda vocações."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Vontade livre, firme e constante? Discerna com seriedade, sem fugir</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Vocação não precisa de visão sobrenatural — precisa de vontade real.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Três critérios (Aertnys-Damen): vontade <em>livre</em> (não forçada), <em>firme</em> (não titubeante), <em>constante</em> (não oscila dia a dia). Não precisa ouvir voz do Céu nem receber sinal milagroso.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Se você tem vontade de ser padre há mais de um ano, de forma livre e firme — converse com um sacerdote. Não enterre essa semente."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== MATRIMÔNIO ===================== -->
+<section class="sacrament" id="matrimonio">
+  <div class="container">
+
+    <div class="sacrament-header">
+      <svg class="sacrament-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="9" cy="12" r="5"/>
+        <circle cx="15" cy="12" r="5"/>
+      </svg>
+      <div class="sacrament-number">Sacramento IV</div>
+      <h2 class="sacrament-title">Matrimônio</h2>
+      <p class="sacrament-tagline">O amor humano elevado a sinal do amor divino</p>
+      <div class="sacrament-divider"><span>✦</span></div>
+    </div>
+
+    <!-- ESSÊNCIA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Essência</span>
+        <h3 class="subsection-title">O que é, no coração</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">União natural entre homem e mulher, elevada por Cristo a sacramento</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Casamento não é invenção da Igreja — existe desde Adão e Eva. Cristo o <em>elevou</em>.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">É o único sacramento baseado numa realidade natural preexistente. Antes de Cristo havia matrimônio-contrato. Jesus o sanou (restaurou) e elevou (tornou sacramento).</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Casamento é mais antigo que a Igreja. Adão e Eva já eram casados. Mas Cristo o transformou: de contrato natural, em canal de graça sobrenatural."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Sinal visível da união entre Cristo e sua Igreja</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Ef 5,32: "Este mistério é grande; digo-o referindo-me a Cristo e à Igreja."</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">O marido ama como Cristo ama a Igreja (até a morte na Cruz); a esposa acolhe como a Igreja acolhe a Cristo. O casamento não é só afeto — é ícone visível do amor divino.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Todo casamento cristão é um pequeno vitral da união entre Deus e a humanidade. Por isso o diabo quer destruí-los."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- POR QUE IMPORTA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Por que importa</span>
+        <h3 class="subsection-title">Por que um jovem deve se importar</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Vocação da maioria — caminho concreto de santidade</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">A maioria dos santos será casada. Céu é feito de casais fiéis.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">A Igreja tem dois estados de vida sacramentais: Ordem e Matrimônio. A maioria é chamada ao segundo. Não é "plano B" em relação ao celibato — é vocação tão alta quanto.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Você provavelmente vai se casar. Isso é sua cruz, seu caminho para o Céu, sua missão — não um concorrente da vida espiritual."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">"A última batalha do diabo será contra a família" (Ir. Lúcia)</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Irmã Lúcia de Fátima, em carta ao Cardeal Caffarra.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Marxismo (Marx, Engels), Escola de Frankfurt (Horkheimer, Marcuse, Reich), revolução sexual — todas miram a família. Por trás, há estratégia espiritual, não só sociológica.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não é exagero. Olhe em volta: divórcio, ideologia de gênero, aborto, anticoncepção. Tudo aponta para um alvo: a família. Vocês serão os soldados dessa batalha."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Abertura à vida: casal colabora com Deus na criação</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Gerar filhos é participar do ato criador de Deus.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">A diferença entre homem/mulher e duas pessoas do mesmo sexo: só a primeira gera vida. Essa capacidade é sagrada — por isso casamento é uno, indissolúvel e aberto à vida.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Quando um casal gera um filho, Deus cria uma alma imortal naquele instante. É co-criação. Não é 'mais uma criança' — é uma eternidade começando."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Como funciona</span>
+        <h3 class="subsection-title">A estrutura concreta</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Ministros são os próprios noivos; padre é testemunha qualificada</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Quem "faz" o sacramento são os noivos, não o padre.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Os nubentes dão e recebem mutuamente os corpos. O padre (ou diácono) está ali como testemunha qualificada exigida pelo decreto Tametsi de Trento. Precisam-se de 5 pessoas no mínimo: noivos, testemunha qualificada, duas testemunhas comuns.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"O padre não 'casa' ninguém. Os noivos é que se casam, um diante do outro e de Cristo. O padre testemunha e dá a bênção."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Três bens (Santo Agostinho): prole, fidelidade e sacramento</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Tríplice finalidade clássica do casamento.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text"><strong>Prole:</strong> abertura aos filhos. <strong>Fidelidade:</strong> exclusividade sexual e afetiva. <strong>Sacramento:</strong> indissolubilidade e graça.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Santo Agostinho resumiu em três palavras. Decore: prole, fidelidade, sacramento. Faltando um, o casamento é amputado."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">3</span>
+          <span class="bullet-title">Três propriedades: único, indissolúvel e aberto à vida</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Cláusulas fixadas pela natureza, não pelo Estado.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text"><strong>Único:</strong> não pode haver poligamia. <strong>Indissolúvel:</strong> até que a morte os separe. <strong>Aberto à vida:</strong> não pode excluir filhos por princípio.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Congresso pode aprovar o que quiser. Não muda a natureza das coisas. Casamento tem essas três cláusulas gravadas pela própria realidade."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">4</span>
+          <span class="bullet-title">Cristo é a "terceira parte" que cria o vínculo eterno</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Livro de Fulton Sheen, "Três para casar".</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Num contrato civil, duas partes se comprometem e podem romper. No matrimônio cristão, Cristo é o terceiro que cria o vínculo. Por isso nem o casal pode desfazer o que Deus uniu.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Quem casa não são dois — são três. Noivo, noiva, e Jesus. E enquanto Ele estiver lá, o vínculo não se quebra."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- ERRO COMUM -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Erro comum</span>
+        <h3 class="subsection-title">Confusões a corrigir</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Não existe divórcio católico — apenas declaração de nulidade</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">O tribunal eclesiástico investiga se houve casamento válido, não se dá "divórcio".</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Nulidade investiga o momento do consentimento: houve algum vício (pressão, engano, exclusão de algum bem)? Se sim, nunca houve casamento. Se foi válido, não há como desfazer.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não é versão católica do divórcio. É investigação arqueológica: olhar para o dia do casamento e ver se ele <em>nasceu</em> ou se foi natimorto."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Não é contrato humano mutável; cláusulas são fixadas por Deus</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Não é acordo entre duas pessoas que podem redefinir os termos.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">"Vou casar mas só quero um filho e depois laqueadura." Nulo (exclusão de abertura à vida). "Vou casar mas se não der certo a gente se separa." Nulo (exclusão de indissolubilidade).</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Quem entra no casamento com 'cláusulas privadas' não casa de verdade. Tem que abraçar o pacote inteiro ou não abraçar nenhum."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- APLICAÇÃO -->
+    <div class="subsection">
+      <div class="subsection-header">
+        <span class="subsection-badge">Aplicação prática</span>
+        <h3 class="subsection-title">Como viver isso hoje</h3>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">1</span>
+          <span class="bullet-title">Namoro: preserve a castidade e fuja das ocasiões próximas</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Namoro é tempo de preparação, não antecipação do casamento.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">Se você tem relações sexuais antes, está roubando a linguagem do casamento. Se já convive, se já age como casado, está cometendo pecado grave contra o 6º Mandamento. E minando a própria base do seu futuro matrimônio.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Não pule etapas. Quem quer um casamento bento no altar, não pode estar profanando o dom antes da hora. Fuja de situações que você sabe que te fazem cair."</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="bullet">
+        <div class="bullet-header">
+          <span class="bullet-number">2</span>
+          <span class="bullet-title">Casados: vigiem a "porteira" dos afetos e cultivem benevolência diária</span>
+          <svg class="bullet-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="bullet-body"><div class="bullet-content">
+          <div class="detail">
+            <span class="detail-label">Ideia central</span>
+            <p class="detail-text">Fidelidade começa nos sentimentos, não nos atos consumados.</p>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Explicação</span>
+            <p class="detail-text">"Se não mandamos no cavalo, mandamos na porteira do estábulo." Você não escolhe sentir atração, mas escolhe o que alimenta. Evite conversas íntimas com alguém que não é seu cônjuge. Cultive ativamente o querer-bem ao esposo/esposa, mesmo em fases difíceis.</p>
+          </div>
+          <div class="detail quote">
+            <span class="detail-label">Como falar</span>
+            <p class="detail-text">"Traição não começa no motel. Começa naquela conversa 'inocente' no trabalho, na mensagem fora de hora, no desabafo com alguém do outro sexo. Feche a porteira."</p>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="closing">
+  <div class="closing-ornament">✦ ✦ ✦</div>
+  <p class="closing-text">"Administrem bem o Sangue de Cristo. Não o deixem cair no chão."</p>
+  <div class="closing-sign">— Padre Pio</div>
+</section>
+
+<!-- ===================== FLOATING ACTIONS ===================== -->
+<div class="floating-actions">
+  <button class="fab" id="expandAll" title="Expandir todos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
+  </button>
+  <button class="fab" id="backToTop" title="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+</div>
+
+<script>
+  // Accordion behavior
+  document.querySelectorAll('.bullet-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const bullet = header.parentElement;
+      bullet.classList.toggle('open');
+    });
+  });
+
+  // Scroll spy for nav tabs
+  const sections = document.querySelectorAll('.sacrament');
+  const tabs = document.querySelectorAll('.nav-tab');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(tab => {
+          tab.classList.toggle('active', tab.dataset.target === id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Smooth scroll for tabs
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(tab.dataset.target);
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Back to top
+  const backToTop = document.getElementById('backToTop');
+  const expandAll = document.getElementById('expandAll');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add('visible');
+      expandAll.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+      expandAll.classList.remove('visible');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Expand/collapse all
+  let allExpanded = false;
+  expandAll.addEventListener('click', () => {
+    allExpanded = !allExpanded;
+    document.querySelectorAll('.bullet').forEach(b => {
+      b.classList.toggle('open', allExpanded);
+    });
+    expandAll.title = allExpanded ? 'Recolher todos' : 'Expandir todos';
+  });
+</script>
+
+</body>
+</html>
